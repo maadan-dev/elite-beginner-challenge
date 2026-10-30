@@ -151,7 +151,7 @@ class HashMap:
 
     # delete: compute the index, scan that bucket, remove only the one pair whose
     # key matches. other pairs in the same bucket stay (delete('cat') must not
-    # touch 'act'). [FILLED] missing key: do nothing and return False.
+    # touch 'act'). missing key: do nothing and return False.
     def delete(self, key):
         bucket = self.buckets[hash_key(key)]
         for i in range(len(bucket)):
@@ -193,10 +193,10 @@ class HashMap:
 # @announce is the same as multiply = announce(multiply): it replaces multiply
 # with whatever announce returns.
 # wrapper wraps extra behavior around the original function.
-# [FILLED] *args and **kwargs: the wrapper doesn't know in advance what arguments the
+# *args and **kwargs: the wrapper doesn't know in advance what arguments the
 # original takes, so *args collects any positional ones and **kwargs any keyword ones,
 # and func(*args, **kwargs) passes them on unchanged. one wrapper works for any function.
-# [FILLED] two different returns: `return wrapper` (in announce) hands back the new
+# two different returns: `return wrapper` (in announce) hands back the new
 # function that replaces multiply. `return result` (in wrapper) hands the original
 # function's answer (12) back to whoever called multiply(3, 4).
 
